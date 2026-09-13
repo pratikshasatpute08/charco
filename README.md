@@ -80,16 +80,30 @@ npx serve .
 
 ## 🌐 Deploy to GitHub Pages
 
-Charco is pre-configured for GitHub Pages without requiring GitHub Actions or build scripts.
+Charco is pre-configured for GitHub Pages without requiring build tools or dependencies.
 
-1. Push this repository to your GitHub account: `https://github.com/pratikshasatpute08/charco`
-2. Go to **Settings** ➔ **Pages** in your repository.
+### Step 1: Commit and Push with GitHub Desktop
+1. Open **GitHub Desktop**.
+2. Write a commit message (e.g. `feat: modern width, SEO enhancements, and social media limits guide`).
+3. Click **Commit to main** and then **Push origin**.
+
+### Step 2: Enable GitHub Pages
+1. Go to your repository on GitHub: [https://github.com/pratikshasatpute08/charco](https://github.com/pratikshasatpute08/charco)
+2. Click **Settings** ➔ **Pages** (in the left sidebar).
 3. Under **Build and deployment** ➔ **Source**, select **Deploy from a branch**.
 4. Set the branch to `main` and the folder to `/(root)`.
 5. Click **Save**. Within 1–2 minutes, your web app will be live at:
    ```
    https://pratikshasatpute08.github.io/charco/
    ```
+
+### Step 3: Configure GitHub Repository "About" Section
+On your repository's main page on GitHub, click the gear icon ⚙️ next to **About** on the right sidebar and set:
+- **Description**: `⚡ Free, fast, and accessible online character counter & real-time word count tool with social media limits, reading times, and zero CDN dependencies.`
+- **Website**: `https://pratikshasatpute08.github.io/charco/`
+- **Include in the home page**: Check ✅ *Use your GitHub Pages website*
+- **Topics**:
+  `character-counter` `word-counter` `text-analyzer` `letter-counter` `accessibility` `wcag` `github-pages` `self-hosted` `seo-tool` `pwa` `devops` `javascript`
 
 ---
 

@@ -1,21 +1,22 @@
 {
   "name": "charco",
   "version": "1.0.0",
-  "description": "Fast, accessible, and self-hosted real-time character & text analytics application.",
+  "description": "Lightning-fast, accessible, and self-hosted online character counter and real-time word count tool.",
   "type": "module",
   "scripts": {
-    "test": "node test_charco.mjs",
     "start": "python -m http.server 8000",
-    "serve:py": "python -m http.server 8000"
+    "serve": "python -m http.server 8000"
   },
   "keywords": [
     "character-counter",
     "word-counter",
+    "online-character-count",
+    "letter-counter",
     "text-analytics",
+    "reading-time-calculator",
     "self-hosted",
     "github-pages",
-    "a11y",
-    "wcag"
+    "wcag-accessible"
   ],
   "author": "Pratiksha Satpute",
   "license": "MIT",
