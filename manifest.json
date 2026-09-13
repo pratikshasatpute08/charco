@@ -1,0 +1,17 @@
+{
+  "name": "Charco - Character & Text Counter",
+  "short_name": "Charco",
+  "description": "Fast, accessible, and self-hosted real-time character, word, and text analytics application.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0b0f19",
+  "theme_color": "#3b82f6",
+  "icons": [
+    {
+      "src": "assets/icons/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

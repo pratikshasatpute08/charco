@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+  <!-- Primary Meta Tags -->
+  <title>Charco - Modern Self-Hosted Character & Text Counter</title>
+  <meta name="title" content="Charco - Modern Self-Hosted Character & Text Counter" />
+  <meta name="description" content="Fast, accessible, and self-hosted real-time character, word, sentence, and paragraph counter with speaking times and keyword density analysis." />
+  <meta name="keywords" content="character counter, word counter, text analysis, live character count, accessible text counter, self-hosted, github pages" />
+  <meta name="author" content="Pratiksha Satpute" />
+  <meta name="color-scheme" content="dark light" />
+  <meta name="theme-color" content="#0b0f19" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://pratikshasatpute08.github.io/charco/" />
+  <meta property="og:title" content="Charco - Modern Self-Hosted Character & Text Counter" />
+  <meta property="og:description" content="Fast, accessible, and self-hosted real-time character and word analytics with zero external dependencies." />
+  <meta property="og:image" content="assets/icons/favicon.svg" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary" />
+  <meta property="twitter:title" content="Charco - Modern Self-Hosted Character & Text Counter" />
+  <meta property="twitter:description" content="Fast, accessible, and self-hosted real-time character and word analytics with zero external dependencies." />
+
+  <!-- Self-Hosted Icons & Manifest -->
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg" />
+  <link rel="manifest" href="manifest.json" />
+
+  <!-- Stylesheets (All Self-Hosted, Zero CDN) -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <!-- Skip link for keyboard accessibility (WCAG 2.2 AA) -->
+  <a href="#main-content" class="sr-only">Skip to main content</a>
+
+  <!-- Header & Navigation -->
+  <header class="header" role="banner">
+    <div class="header-container">
+      <a href="./" class="brand-link" aria-label="Charco - Homepage">
+        <img src="assets/icons/logo.svg" alt="" class="brand-logo" width="32" height="32" />
+        <span class="brand-text">Charco</span>
+        <span class="brand-badge">v1.0</span>
+      </a>
+
+      <nav class="nav-actions" aria-label="Quick Actions">
+        <!-- Theme Toggle -->
+        <button type="button" class="btn-action" id="theme-toggle-btn" aria-label="Switch theme" title="Toggle dark/light theme">
+          <img src="assets/icons/sun.svg" id="theme-icon" class="icon" alt="" aria-hidden="true" width="18" height="18" />
+          <span class="sr-only">Toggle Theme</span>
+        </button>
+
+        <!-- About Creator Button (Modal Trigger) -->
+        <button type="button" class="btn-action btn-about btn-about-trigger" aria-haspopup="dialog" aria-controls="about-modal" title="About Pratiksha & Charco">
+          <img src="assets/icons/info.svg" class="icon" alt="" aria-hidden="true" width="18" height="18" />
+          <span>About</span>
+        </button>
+
+        <!-- Star on GitHub Button -->
+        <a href="https://github.com/pratikshasatpute08/charco" class="btn-icon-link btn-star" target="_blank" rel="noopener noreferrer" aria-label="Star pratikshasatpute08/charco on GitHub" title="Star this repository on GitHub">
+          <img src="assets/icons/star.svg" class="icon" alt="" aria-hidden="true" width="18" height="18" />
+          <span>Star Repo</span>
+        </a>
+
+        <!-- GitHub Profile Link -->
+        <a href="https://github.com/pratikshasatpute08" class="btn-icon-link" target="_blank" rel="noopener noreferrer" aria-label="Visit Pratiksha's GitHub Profile" title="Visit creator profile on GitHub">
+          <img src="assets/icons/github.svg" class="icon" alt="" aria-hidden="true" width="18" height="18" />
+          <span>GitHub</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content Container -->
+  <main class="main-wrapper" id="main-content" role="main">
+    
+    <!-- Hero & Primary Metrics Section -->
+    <section class="metrics-section" aria-label="Live Statistics Overview">
+      <div class="hero-stat-card">
+        <div class="hero-stat-content">
+          <span class="hero-stat-label" id="hero-stat-title">Characters</span>
+          <div class="hero-stat-number" id="stat-chars-hero" aria-labelledby="hero-stat-title">0</div>
+        </div>
+        <div class="hero-stat-meta">
+          <div class="meta-pill">
+            <span class="meta-pill-label">No Spaces</span>
+            <span class="meta-pill-val" id="stat-chars-no-spaces-hero">0</span>
+          </div>
+          <div class="meta-pill">
+            <span class="meta-pill-label">Reading Time</span>
+            <span class="meta-pill-val" id="stat-reading-time">0 sec</span>
+          </div>
+          <div class="meta-pill">
+            <span class="meta-pill-label">Speaking Time</span>
+            <span class="meta-pill-val" id="stat-speaking-time">0 sec</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Secondary Metrics Grid -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-header">
+            <span class="stat-label">Words</span>
+            <img src="assets/icons/sparkles.svg" class="stat-icon" alt="" aria-hidden="true" />
+          </div>
+          <span class="stat-value" id="stat-words">0</span>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-header">
+            <span class="stat-label">Sentences</span>
+            <img src="assets/icons/chart.svg" class="stat-icon" alt="" aria-hidden="true" />
+          </div>
+          <span class="stat-value" id="stat-sentences">0</span>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-header">
+            <span class="stat-label">Paragraphs</span>
+            <img src="assets/icons/sliders.svg" class="stat-icon" alt="" aria-hidden="true" />
+          </div>
+          <span class="stat-value" id="stat-paragraphs">0</span>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-header">
+            <span class="stat-label">Lines</span>
+            <img src="assets/icons/clock.svg" class="stat-icon" alt="" aria-hidden="true" />
+          </div>
+          <span class="stat-value" id="stat-lines">0</span>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-header">
+            <span class="stat-label">Avg Word Length</span>
+            <img src="assets/icons/mic.svg" class="stat-icon" alt="" aria-hidden="true" />
+          </div>
+          <span class="stat-value" id="stat-avg-word-length">0 chars</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Textarea & Editor Workspace -->
+    <section class="editor-section" aria-label="Text Input and Transformation">
+      <div class="editor-header">
+        <div class="target-limit-bar">
+          <label for="target-select" class="target-select-label">Target Limit:</label>
+          <select id="target-select" class="target-select" aria-label="Select character target limit preset">
+            <option value="0">None (Unlimited)</option>
+            <option value="280">X / Twitter (280)</option>
+            <option value="160">SMS / Meta Description (160)</option>
+            <option value="2200">Instagram Caption (2,200)</option>
+            <option value="3000">LinkedIn Post (3,000)</option>
+            <option value="custom">Custom Limit...</option>
+          </select>
+          <input type="number" id="custom-limit-input" class="custom-limit-input" placeholder="e.g. 500" min="1" max="1000000" aria-label="Custom character limit" style="display: none;" />
+          <span id="limit-feedback" class="limit-feedback" role="status" aria-live="polite"></span>
+        </div>
+
+        <!-- Toolbar Shortcuts Hint -->
+        <span style="font-size: 0.8rem; color: var(--text-tertiary);">
+          Shortcut: <kbd style="font-family: var(--font-mono); background: var(--bg-tertiary); padding: 2px 4px; border-radius: 4px; border: 1px solid var(--border-subtle);">Ctrl+Shift+C</kbd> to copy
+        </span>
+      </div>
+
+      <!-- Character Target Limit Progress Bar -->
+      <div id="progress-container" class="progress-container" aria-hidden="true">
+        <div id="progress-bar" class="progress-bar"></div>
+      </div>
+
+      <!-- Textarea Input -->
+      <div class="textarea-wrapper">
+        <label for="text-input" class="sr-only">Type or paste text to count characters and analyze content</label>
+        <textarea
+          id="text-input"
+          class="main-textarea"
+          placeholder="Start typing or paste your text here to see real-time statistics..."
+          spellcheck="true"
+          aria-describedby="hero-stat-title"
+        ></textarea>
+      </div>
+
+      <!-- Action Toolbar -->
+      <div class="toolbar" role="toolbar" aria-label="Text editing tools">
+        <div class="toolbar-group">
+          <button type="button" class="tool-btn" data-action="copy" title="Copy text to clipboard (Ctrl+Shift+C)">
+            <img src="assets/icons/copy.svg" class="icon" alt="" aria-hidden="true" width="16" height="16" />
+            <span>Copy Text</span>
+          </button>
+          <button type="button" class="tool-btn tool-btn-danger" data-action="clear" title="Clear all text (Ctrl+Shift+K)">
+            <img src="assets/icons/trash.svg" class="icon" alt="" aria-hidden="true" width="16" height="16" />
+            <span>Clear</span>
+          </button>
+          <button type="button" class="tool-btn" data-action="clean-whitespace" title="Remove trailing spaces and redundant blank lines">
+            <span>Clean Spacing</span>
+          </button>
+          <button type="button" class="tool-btn" data-action="sample" title="Load sample text to test analytics">
+            <span>Load Sample</span>
+          </button>
+        </div>
+
+        <div class="toolbar-group">
+          <button type="button" class="tool-btn" data-action="uppercase" title="Convert to UPPERCASE">UPPER</button>
+          <button type="button" class="tool-btn" data-action="lowercase" title="Convert to lowercase">lower</button>
+          <button type="button" class="tool-btn" data-action="titlecase" title="Convert to Title Case">Title Case</button>
+          <button type="button" class="tool-btn" data-action="sentencecase" title="Convert to Sentence case">Sentence case</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Keyword Density & Text Insights Drawer -->
+    <section class="insights-section" aria-label="Keyword Density and Text Analysis">
+      <div class="insights-header" id="insights-header" role="button" tabindex="0" aria-expanded="true" aria-controls="insights-content">
+        <h2 class="insights-title">
+          <img src="assets/icons/chart.svg" class="icon" alt="" aria-hidden="true" width="18" height="18" />
+          <span>Keyword Density &amp; Text Insights</span>
+        </h2>
+        <img src="assets/icons/sliders.svg" class="insights-toggle-icon" id="insights-toggle-icon" alt="" aria-hidden="true" width="18" height="18" />
+      </div>
+
+      <div class="insights-content" id="insights-content">
+        <div class="density-list" id="density-list" role="region" aria-live="polite">
+          <div style="color: var(--text-tertiary); font-size: 0.85rem; padding: 8px 0;">
+            Start typing to see keyword density insights...
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-content">
+      <p>
+        Built with pride &amp; modern web standards by <strong>Pratiksha</strong> &bull; 100% Self-Hosted &bull; Zero External Dependencies
+      </p>
+      <div class="footer-links">
+        <a href="https://github.com/pratikshasatpute08/charco" class="footer-link" target="_blank" rel="noopener noreferrer">
+          GitHub Repository
+        </a>
+        <span>&bull;</span>
+        <a href="https://github.com/pratikshasatpute08" class="footer-link" target="_blank" rel="noopener noreferrer">
+          Creator Profile
+        </a>
+        <span>&bull;</span>
+        <button type="button" class="footer-link btn-about-trigger" style="background: none; border: none; cursor: pointer; font-size: inherit; text-decoration: underline;">
+          About Creator
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Accessible Modal Popup: About Pratiksha & Charco -->
+  <div class="modal-backdrop" id="about-modal-backdrop" role="presentation" aria-hidden="true">
+    <div
+      class="modal-dialog"
+      id="about-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modal-creator-name"
+      aria-describedby="modal-creator-bio"
+    >
+      <button type="button" class="modal-close-btn" data-close-modal aria-label="Close dialog" title="Close dialog (Escape)">
+        <img src="assets/icons/close.svg" class="icon" alt="" aria-hidden="true" width="18" height="18" />
+      </button>
+
+      <div class="creator-header">
+        <div class="creator-avatar" aria-hidden="true">P</div>
+        <h2 class="creator-name" id="modal-creator-name">Pratiksha</h2>
+        <div class="creator-subtitle">DevOps &amp; Cloud Enthusiast</div>
+      </div>
+
+      <p class="creator-bio" id="modal-creator-bio">
+        Hi there! I am Pratiksha, a DevOps enthusiast passionate about AWS, Cloud Native infrastructure, CI/CD automation, and modern web engineering. Charco is built as a pristine, self-hosted web utility following strict accessibility and performance best practices.
+      </p>
+
+      <div class="skills-title">Core Interests &amp; Tech Stack</div>
+      <div class="skills-container" role="list" aria-label="Technical skills and interests">
+        <span class="skill-pill" role="listitem">DevOps</span>
+        <span class="skill-pill" role="listitem">AWS Cloud</span>
+        <span class="skill-pill" role="listitem">CI / CD</span>
+        <span class="skill-pill" role="listitem">Linux</span>
+        <span class="skill-pill" role="listitem">Docker</span>
+        <span class="skill-pill" role="listitem">Git &amp; GitHub</span>
+        <span class="skill-pill" role="listitem">Automation</span>
+        <span class="skill-pill" role="listitem">Modern Web Standards</span>
+      </div>
+
+      <div class="modal-actions">
+        <a href="https://github.com/pratikshasatpute08/charco" class="modal-btn-primary" target="_blank" rel="noopener noreferrer">
+          <img src="assets/icons/star.svg" class="icon" alt="" aria-hidden="true" width="18" height="18" style="fill: #ffffff;" />
+          <span>Star Charco on GitHub</span>
+        </a>
+        <a href="https://github.com/pratikshasatpute08" class="modal-btn-secondary" target="_blank" rel="noopener noreferrer">
+          <img src="assets/icons/github.svg" class="icon" alt="" aria-hidden="true" width="18" height="18" />
+          <span>GitHub Profile</span>
+          <img src="assets/icons/external.svg" class="icon" alt="" aria-hidden="true" width="14" height="14" />
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Accessible Toast Notification Container (WCAG aria-live compliant) -->
+  <div id="toast-container" class="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- Application Entry Point (ES Module) -->
+  <script type="module" src="assets/js/app.js"></script>
+</body>
+</html>

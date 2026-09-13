@@ -1,0 +1,27 @@
+{
+  "name": "charco",
+  "version": "1.0.0",
+  "description": "Fast, accessible, and self-hosted real-time character & text analytics application.",
+  "type": "module",
+  "scripts": {
+    "test": "node test_charco.mjs",
+    "start": "python -m http.server 8000",
+    "serve:py": "python -m http.server 8000"
+  },
+  "keywords": [
+    "character-counter",
+    "word-counter",
+    "text-analytics",
+    "self-hosted",
+    "github-pages",
+    "a11y",
+    "wcag"
+  ],
+  "author": "Pratiksha Satpute",
+  "license": "MIT",
+  "homepage": "https://pratikshasatpute08.github.io/charco/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pratikshasatpute08/charco.git"
+  }
+}
